@@ -126,7 +126,6 @@ const autofit: autofit = {
   },
   off(el = "body") {
     try {
-      isElRectification = false;
       window.removeEventListener("resize", resizeListener);
       document.querySelector("#autofit-style")?.remove();
       const ignoreStyleDOM = document.querySelector("#ignoreStyle");
@@ -150,6 +149,7 @@ function elRectification(el: string, isKeepRatio: string | boolean = true, level
   if (!autofit.isAutofitRunnig) {
     console.error("autofit.js：autofit has not been initialized yet");
   }
+  offelRectification();
   !el && console.error(`autofit.js：bad selector: ${el}`);
   currelRectification = el;
   currelRectificationLevel = level;
@@ -180,6 +180,7 @@ function elRectification(el: string, isKeepRatio: string | boolean = true, level
 
 function offelRectification() {
   if (!currelRectification) return;
+  isElRectification = false;
   for (const item of Array.from(document.querySelectorAll<HTMLElement>(currelRectification))) {
     item.style.width = ``;
     item.style.height = ``;

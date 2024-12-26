@@ -11,12 +11,13 @@
     }
 
     body {
-      overflow-y: scroll;
+      overflow-y: auto;
+      height: 100vh;
     }
 
     .main {
       width: 100%;
-      height: 120%;
+      height: 100%;
       display: flex;
       color: #fff;
     }
@@ -96,7 +97,7 @@
   <script src="//unpkg.com/element-plus"></script>
 </head>
 
-<body style="padding: 0;margin: 0;">
+<body >
   <div id="app" class="main">
     <div class="left">
       <el-dropdown>
@@ -114,7 +115,12 @@
         </template>
       </el-dropdown>
     </div>
-    <div class="center">center</div>
+    <div class="center">
+      <el-select placeholder="Select" style="width: 120px;max-width: 120px;">
+        <el-option label="Option A" value="A" />
+        <el-option label="Option B" value="B" />
+      </el-select>
+    </div>
     <div class="right">right</div>
     <div class="rulerMask">
       <div class="vertical">
