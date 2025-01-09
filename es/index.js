@@ -72,7 +72,6 @@ var autofit = {
         var _a;
         if (el === void 0) { el = "body"; }
         try {
-            isElRectification = false;
             window.removeEventListener("resize", resizeListener);
             (_a = document.querySelector("#autofit-style")) === null || _a === void 0 ? void 0 : _a.remove();
             var ignoreStyleDOM = document.querySelector("#ignoreStyle");
@@ -99,6 +98,7 @@ function elRectification(el, isKeepRatio, level) {
     if (!autofit.isAutofitRunnig) {
         console.error("autofit.js：autofit has not been initialized yet");
     }
+    offelRectification();
     !el && console.error("autofit.js\uFF1Abad selector: ".concat(el));
     currelRectification = el;
     currelRectificationLevel = level;
@@ -141,6 +141,7 @@ function offelRectification() {
     var e_2, _a;
     if (!currelRectification)
         return;
+    isElRectification = false;
     try {
         for (var _b = __values(Array.from(document.querySelectorAll(currelRectification))), _c = _b.next(); !_c.done; _c = _b.next()) {
             var item = _c.value;

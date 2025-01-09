@@ -1,5 +1,5 @@
 /**
- * autofit.js v3.2.2
+ * autofit.js v3.2.3
  * (c) 2023-present Larry Zhu
  * Released under the MIT License.
  */
@@ -118,7 +118,6 @@ function _typeof(o) {
       var el = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "body";
       try {
         var _document$querySelect;
-        isElRectification = false;
         window.removeEventListener("resize", resizeListener);
         (_document$querySelect = document.querySelector("#autofit-style")) === null || _document$querySelect === void 0 || _document$querySelect.remove();
         var ignoreStyleDOM = document.querySelector("#ignoreStyle");
@@ -142,6 +141,7 @@ function _typeof(o) {
     if (!autofit.isAutofitRunnig) {
       console.error("autofit.js：autofit has not been initialized yet");
     }
+    offelRectification();
     !el && console.error("autofit.js：bad selector: ".concat(el));
     currelRectification = el;
     currelRectificationLevel = level;
@@ -172,6 +172,7 @@ function _typeof(o) {
   }
   function offelRectification() {
     if (!currelRectification) return;
+    isElRectification = false;
     for (var _i2 = 0, _Array$from = Array.from(document.querySelectorAll(currelRectification)); _i2 < _Array$from.length; _i2++) {
       var item = _Array$from[_i2];
       item.style.width = "";

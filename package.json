@@ -1,6 +1,6 @@
 {
   "name": "autofit.js",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "description": "autofit.js 是迄今为止最易用的自适应工具",
   "main": "index.js",
   "types": "./index.d.ts",
@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/larryzhu-dev/autofit.js.git"
+    "url": "https://github.com/Auto-Plugin/autofit.js"
   },
-  "homepage": "https://larryzhu-dev.github.io/autoLarryPages/autofit.js/",
+  "homepage": "https://auto-plugin.github.io/index/autofit.js/",
   "keywords": [
     "大屏",
     "自适应",
