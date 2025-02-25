@@ -18,7 +18,7 @@ export interface AutofitOption {
   allowScroll?: boolean;
 }
 
-declare interface autofit {
+declare interface Autofit {
   /**
    * 参数列表
    * 对象：
@@ -70,7 +70,7 @@ let resizeListener: EventListenerOrEventListenerObject = null!;
 let timer: number = null!;
 let currScale: string | number = 1;
 let isElRectification = false;
-const autofit: autofit = {
+const autofit: Autofit = {
   isAutofitRunnig: false,
   init(options = {}, isShowInitTip = true) {
     if (isShowInitTip) {
@@ -212,7 +212,7 @@ function keepFit(
   dom.style.height = `${height}px`;
   dom.style.width = `${width}px`;
   if (cssMode === "zoom") {
-    dom.style.zoom = `${currScale}`;
+    (dom.style as any).zoom = `${currScale}`;
   } else {
     dom.style.transform = `scale(${currScale})`;
   }
@@ -226,7 +226,7 @@ function keepFit(
       console.error(`autofit: found invalid or empty selector/object: ${itemEl}`);
       continue;
     }
-    const realScale = item.scale ? item.scale : 1 / Number(currScale);
+    const realScale: number = item.scale ? item.scale : 1 / Number(currScale);
     const realFontSize = realScale != currScale && item.fontSize;
     const realWidth = realScale != currScale && item.width;
     const realHeight = realScale != currScale && item.height;
@@ -243,9 +243,5 @@ function keepFit(
     }
   }
 }
-
-// UMD导出需要，UMD导出使用的 export default
-// 所以 export 函数|变量|常量 导出的，都需要挂载到 autofit 上，也就是在 export default autofit 上了
 autofit.elRectification = elRectification;
-export { elRectification };
-export default autofit;
+export { autofit as default, elRectification };

@@ -1,5 +1,6 @@
-import autofit from '../src/index';
-
+// import autofit from '../src/index';
+import autofit from "autofit.js";
+console.log('autofit::: ', autofit);
 autofit.init({
   // el: 'body',
   // cssMode: 'zoom',

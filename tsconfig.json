@@ -1,13 +1,12 @@
 {
-  "include": [
-    "global.d.ts",
-    "src/**/*.ts"
-  ],
+  "include": ["global.d.ts", "src/**/*.ts"],
   "exclude": [],
   "compilerOptions": {
     "strict": true,
     "moduleResolution": "node",
-    "declaration": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/types",
     "isolatedModules": true,
     "removeComments": false,
     "esModuleInterop": true,
@@ -28,11 +27,7 @@
     "plugins": [
       {
         "name": "typescript-snapshots-plugin",
-        "snapshotCallIdentifiers": [
-          "toMatchSnapshot",
-          "toThrowErrorMatchingSnapshot",
-          "toMatchDiffSnapshot"
-        ]
+        "snapshotCallIdentifiers": ["toMatchSnapshot", "toThrowErrorMatchingSnapshot", "toMatchDiffSnapshot"]
       }
     ]
   }
