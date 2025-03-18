@@ -102,7 +102,7 @@ function elRectification(el, isKeepRatio = true, level = 1) {
 			item.style.width = `${100 * rectification}%`;
 			item.style.height = `${100 * rectification}%`;
 		}
-		item.style.transform = `scale(${1 / Number(currScale)})`;
+		item.style.transform = `translateZ(0) scale(${1 / Number(currScale)})`;
 		item.style.transformOrigin = `0 0`;
 	}
 	isElRectification = true;
@@ -127,7 +127,7 @@ function keepFit(dw, dh, dom, ignore, limit, cssMode = "scale") {
 	dom.style.height = `${height}px`;
 	dom.style.width = `${width}px`;
 	if (cssMode === "zoom") dom.style.zoom = `${currScale}`;
-else dom.style.transform = `scale(${currScale})`;
+else dom.style.transform = `translateZ(0) scale(${currScale})`;
 	const ignoreStyleDOM = document.querySelector("#ignoreStyle");
 	ignoreStyleDOM.innerHTML = "";
 	for (const temp of ignore) {

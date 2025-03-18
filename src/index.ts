@@ -176,7 +176,7 @@ function elRectification(el: string, isKeepRatio: string | boolean = true, level
       item.style.width = `${100 * rectification}%`;
       item.style.height = `${100 * rectification}%`;
     }
-    item.style.transform = `scale(${1 / Number(currScale)})`;
+    item.style.transform = `translateZ(0) scale(${1 / Number(currScale)})`;
     item.style.transformOrigin = `0 0`;
   }
   isElRectification = true;
@@ -212,7 +212,7 @@ function keepFit(
   if (cssMode === "zoom") {
     (dom.style as any).zoom = `${currScale}`;
   } else {
-    dom.style.transform = `scale(${currScale})`;
+    dom.style.transform = `translateZ(0) scale(${currScale})`;
   }
   const ignoreStyleDOM = document.querySelector("#ignoreStyle")!;
   ignoreStyleDOM.innerHTML = "";
