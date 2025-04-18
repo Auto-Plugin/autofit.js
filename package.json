@@ -1,6 +1,6 @@
 {
   "name": "autofit.js",
-  "version": "3.2.5",
+  "version": "3.2.7",
   "description": "autofit.js 是迄今为止最易用的自适应工具",
   "type": "module",
   "main": "./dist/autofit.cjs.js",
