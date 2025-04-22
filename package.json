@@ -1,6 +1,6 @@
 {
   "name": "autofit.js",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "autofit.js 是迄今为止最易用的自适应工具",
   "type": "module",
   "main": "./dist/autofit.cjs.js",
@@ -19,7 +19,9 @@
   ],
   "scripts": {
     "dev": "rolldown -c ./rolldown.config.dev.ts --watch",
-    "build": "tsc --emitDeclarationOnly && rolldown -c ./rolldown.config.ts"
+    "build": "tsc --emitDeclarationOnly && rolldown -c ./rolldown.config.ts",
+    "publish": "npm run build && npm publish",
+    "vnr": "vnr"
   },
   "repository": {
     "type": "git",
@@ -52,7 +54,8 @@
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^1.1.1",
     "tsc-alias": "^1.8.6",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "vnr": "^1.0.5"
   },
   "license": "MIT"
 }
