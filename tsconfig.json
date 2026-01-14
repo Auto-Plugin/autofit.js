@@ -3,6 +3,7 @@
   "exclude": [],
   "compilerOptions": {
     "strict": true,
+    "target": "ES6",
     "moduleResolution": "node",
     "declaration": true,
     "emitDeclarationOnly": true,

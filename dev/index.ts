@@ -6,7 +6,7 @@ autofit.init({
   // cssMode: 'zoom',
   // allowScoll: true,
   // limit: 0,
-  ignore:['div[id*="el-popper-container"]']
+  ignore: ['div[id*="el-popper-container"]']
   // ignore:['.div','.span']
 });
 // elRectification('.div', true, 1);
